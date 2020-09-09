@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # What Are ANOVA Tables?
 
-ANOVA tables, like regression tables, produce significance tests (and sometimes estimates of effect sizes). Unlike regression tables, where a test if given for each coefficient, in ANOVA tables a test is given by some grouping scheme: by model (of model comparison), of by factor where all coefficients that represent a categorical variable are tested in a joint test. It is the latter table, used usually in analysis of factorial data, that is discussed here.
+ANOVA tables, like regression tables, produce significance tests (and sometimes estimates of effect sizes). Unlike regression tables, where a test is given for each coefficient, in ANOVA tables a test is given by some grouping scheme: by model (of model comparison), of by factor where all coefficients that represent a categorical variable are tested in a joint test. It is the latter table, used usually in analysis of factorial data, that is discussed here.
 
 > Thesis: centering predictors changes the results given by ANOVA tables.
 
@@ -18,7 +18,7 @@ Generally, the results given by ANOVA tables with centered variables are the one
 
 # Why Center?
 
-In moderation models / models with interaction terms, centering of variables affects the estimates (and thus the joint test and significance) of lower order terms ([Dalal & Zickar, 2011](https://doi.org/10.1177%2F1094428111430540)). It is only after centering variables, do these tests for lower order terms represent what we expect them to - *main effects*, across the levels of all other terms on average ([AFNI](https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/STATISTICS/center.html#centering-with-one-group-of-subjects)).
+In moderation models / models with interaction terms, centering of variables affects the estimates (and thus the joint test and significance) of lower order terms ([Dalal & Zickar, 2011](https://doi.org/10.1177%2F1094428111430540)). It is only after centering variables, that these tests for lower order terms represent what we expect them to - *main effects*, across the levels of all other terms on average ([AFNI](https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/STATISTICS/center.html#centering-with-one-group-of-subjects)).
 
 # How to Center Variables?
 
@@ -57,7 +57,7 @@ contrasts(iris$Species) <- contr.sum
 When generating ANOVA tables, the $SS$ of factor $A$ are computed with all other coefficients held constant at 0 (similar to how coefficients are interpreted as simple slopes in moderation analysis). If factor $B$ has a treatment coding scheme, then when the coefficients of factor $B$ are 0, there actually represent the baseline group, as so the effect for $A$ is actually the simple effect of $A$ and not the main effect!
 
 
-"But wait!", I hear you shout, "When we learned ANOVA is Intro to stats, we weren't taught to center any variables!".
+"But wait!", I hear you shout, "When we learned ANOVA in Intro to stats, we weren't taught to center any variables!".
 
 This is true - you didn't explicitly learn this, but taking a closer look at the equations of the various $SS$s will reveal that you've been doing just that all along. 
 

@@ -369,7 +369,7 @@ summary {
 
 <div id="what-are-anova-tables" class="section level1">
 <h1>What Are ANOVA Tables?</h1>
-<p>ANOVA tables, like regression tables, produce significance tests (and sometimes estimates of effect sizes). Unlike regression tables, where a test if given for each coefficient, in ANOVA tables a test is given by some grouping scheme: by model (of model comparison), of by factor where all coefficients that represent a categorical variable are tested in a joint test. It is the latter table, used usually in analysis of factorial data, that is discussed here.</p>
+<p>ANOVA tables, like regression tables, produce significance tests (and sometimes estimates of effect sizes). Unlike regression tables, where a test is given for each coefficient, in ANOVA tables a test is given by some grouping scheme: by model (of model comparison), of by factor where all coefficients that represent a categorical variable are tested in a joint test. It is the latter table, used usually in analysis of factorial data, that is discussed here.</p>
 <blockquote>
 <p>Thesis: centering predictors changes the results given by ANOVA tables.</p>
 </blockquote>
@@ -377,7 +377,7 @@ summary {
 </div>
 <div id="why-center" class="section level1">
 <h1>Why Center?</h1>
-<p>In moderation models / models with interaction terms, centering of variables affects the estimates (and thus the joint test and significance) of lower order terms (<a href="https://doi.org/10.1177%2F1094428111430540">Dalal &amp; Zickar, 2011</a>). It is only after centering variables, do these tests for lower order terms represent what we expect them to - <em>main effects</em>, across the levels of all other terms on average (<a href="https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/STATISTICS/center.html#centering-with-one-group-of-subjects">AFNI</a>).</p>
+<p>In moderation models / models with interaction terms, centering of variables affects the estimates (and thus the joint test and significance) of lower order terms (<a href="https://doi.org/10.1177%2F1094428111430540">Dalal &amp; Zickar, 2011</a>). It is only after centering variables, that these tests for lower order terms represent what we expect them to - <em>main effects</em>, across the levels of all other terms on average (<a href="https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/STATISTICS/center.html#centering-with-one-group-of-subjects">AFNI</a>).</p>
 </div>
 <div id="how-to-center-variables" class="section level1">
 <h1>How to Center Variables?</h1>
@@ -402,7 +402,7 @@ X_{centered} = X-\bar{X}
 <div id="addendum" class="section level1">
 <h1>Addendum</h1>
 <p>When generating ANOVA tables, the <span class="math inline">\(SS\)</span> of factor <span class="math inline">\(A\)</span> are computed with all other coefficients held constant at 0 (similar to how coefficients are interpreted as simple slopes in moderation analysis). If factor <span class="math inline">\(B\)</span> has a treatment coding scheme, then when the coefficients of factor <span class="math inline">\(B\)</span> are 0, there actually represent the baseline group, as so the effect for <span class="math inline">\(A\)</span> is actually the simple effect of <span class="math inline">\(A\)</span> and not the main effect!</p>
-<p>“But wait!”, I hear you shout, “When we learned ANOVA is Intro to stats, we weren’t taught to center any variables!”.</p>
+<p>“But wait!”, I hear you shout, “When we learned ANOVA in Intro to stats, we weren’t taught to center any variables!”.</p>
 <p>This is true - you didn’t explicitly learn this, but taking a closer look at the equations of the various <span class="math inline">\(SS\)</span>s will reveal that you’ve been doing just that all along.</p>
 <p>For <span class="math inline">\(SS_A\)</span>: <span class="math display">\[
 SS_A = n\sum (\bar{X}_{i.}-\bar{X}_{..})^2
@@ -418,8 +418,8 @@ n\sum\sum (\bar{X}_{ij}-(\bar{X}_{.j}-\bar{X}_{..})-(\bar{X}_{ij}-\bar{X}_{.j}-\
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Unfortunately, this makes the interpretation of the actual coefficient not as straightforward as when using treatment coding…<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>When conducting ANOVAs with <a href="https://cran.r-project.org/package=afex"><code>afex</code></a>, you don’t need to worry about setting effects coding, as <code>afex</code> <a href="https://github.com/singmann/afex/issues/63">takes care of this for you</a>. However when conducting ANCOVAs with <code>afex</code>, continuous variables <a href="https://github.com/singmann/afex/issues/59"><strong>are not centered</strong></a> (but a warning is given), and you have to do that yourself. This is also true for JASP (that has <code>afex</code> under the hood) and even for SPSS (but if you’re still using SPSS, this might be the least of your problems…).<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>Unfortunately, this makes the interpretation of the actual coefficient not as straightforward as when using treatment coding…<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>When conducting ANOVAs with <a href="https://cran.r-project.org/package=afex"><code>afex</code></a>, you don’t need to worry about setting effects coding, as <code>afex</code> <a href="https://github.com/singmann/afex/issues/63">takes care of this for you</a>. However when conducting ANCOVAs with <code>afex</code>, continuous variables <a href="https://github.com/singmann/afex/issues/59"><strong>are not centered</strong></a> (but a warning is given), and you have to do that yourself. This is also true for JASP (that has <code>afex</code> under the hood) and even for SPSS (but if you’re still using SPSS, this might be the least of your problems…).<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 
